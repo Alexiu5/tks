@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from '../components/Product/product'
+import ContactForm from '../components/ContactForm/contactForm'
 
 // images
 import hero_transparent from '../img/hero_transparent.png'
@@ -7,6 +8,8 @@ import logo from '../img/tks_logo_black.png'
 import product1 from '../img/products/product-1.png'
 import product2 from '../img/products/keeb.jpg'
 import product3 from '../img/products/product-3.png'
+import keyboardMilk from '../img/keyboard-milk.jpg'
+import kara from '../img/kara.jpg'
 
 import './home.css'
 
@@ -56,6 +59,7 @@ const Home = () => {
 
     return (
         <div className='w-full h-full flex flex-col items-center lg:px-12 px-6 '>
+            {/* Hero banner */}
             <div
                 className='
 					hero-background
@@ -63,7 +67,7 @@ const Home = () => {
 					h-52
 					md:h-72
 					2xl:h-96
-					bg-red-50
+					bg-gray-400
 					rounded-3xl
 					relative
 					mb-20
@@ -157,6 +161,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* New Arrivals */}
             <div
                 className='arrivals
 				w-full
@@ -168,7 +173,7 @@ const Home = () => {
 				md:mt-16 lg:mt-4 2xl:my-0 rounded-3xl
 				px-4 xl:px-16 pt-10
 				flex items-center justify-start flex-col'>
-                <h1 className='uppercase text-4xl font-bold w-full text-left mb-16'>
+                <h1 className='uppercase text-5xl font-bold w-full text-left mb-16'>
                     Recien llegados
                 </h1>
 
@@ -192,8 +197,103 @@ const Home = () => {
                     ver más
                 </button>
             </div>
-            {/* <div className='somos w-10 h-10 bg-black mb-5'></div>
-            <div className='contactanos w-10 h-10 bg-black mb-5'></div> */}
+            {/* Who are we? */}
+
+            <div
+                className='container w-full
+					min-h-96
+					overflow-hidden
+					relative rounded-3xl
+					z-0'>
+                <div className='shadow absolute w-full h-full bg-gray-800 left-0 top-16 z-0 opacity-10 rounded-3xl'></div>
+                <div
+                    className='somos
+					my-10
+					text-white
+					py-4
+                    px-4
+                    mt-16
+					xl:mt-32
+					flex
+					flex-col
+					z-40
+					transform
+                    scale-95
+                    xl:scale-90'>
+                    <h2 className='title w-full h-16 font-bold text-3xl lg:text-5xl text-black uppercase text-center md:mb-16'>
+                        ¿Quienes somos?
+                    </h2>
+
+                    <div className='flex gap-5 flex-col-reverse xl:flex-row justify-center items-center pb-24 rounded-3xl'>
+                        <div
+                            className='text-container  rounded-3xl  w-full'
+                            style={{ minWidth: '40vw', minHeight: '50vh' }}>
+                            <div className='w-full h-full text-justify p-5 2xl:px-20 leading-8 text-2xl font-light text-black'>
+                                <p>
+                                    Somos una tienda online, especializada en
+                                    artículos para teclados mecánicos.
+                                </p>
+                                <br />
+                                <p>
+                                    Nos consideramos como entusiastas de este
+                                    hobby y queremos que más personas se
+                                    interesen también.
+                                </p>
+                                <br />
+                                <p>
+                                    Es por eso que creamos esta tienda, no solo
+                                    para vender nuestros productos, sino que
+                                    también, para dar a conocer lo interesante
+                                    que puede ser construir un teclado tan único
+                                    como tú.
+                                </p>
+                                <br />
+                                <p>
+                                    Brindamos asesorías e información atreves de
+                                    nuestras redes sociales y en esta pagina web
+                                    en la sección de Academia. Te recomendamos
+                                    que le eches una mirada si no entiendes
+                                    mucho de este mundo, quizás te termine
+                                    gustando tanto como a nosotros.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            className='image-container 
+                                rounded-3xl bg-center bg-no-repeat bg-cover filter brightness-90 contrast-80 opacity-100 w-full'
+                            style={{
+                                minWidth: '40vw',
+                                minHeight: '50vh',
+                                backgroundImage: `url(${keyboardMilk})`,
+                            }}></div>
+                        <button
+                            className='
+								absolute
+								bottom-0
+								view-more-btn
+								w-32
+								h-12
+								lg:text-lg
+								border-solid
+								border-black border-2
+								rounded-2xl text-black
+								font-bold tracking-wide
+								capitalize
+								'>
+                            ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {/* Contacts us */}
+            <div className='contactanos w-full lg:min-h-96  mb-5 mt-16'>
+                <div className='w-full min-h-full bg-gray-100 rounded-3xl p-16'>
+                    <h2 className='title uppercase text-3xl lg:text-5xl font-bold w-full text-left mb-16 text-black'>
+                        Contactanos
+                    </h2>
+                    <ContactForm />
+                </div>
+            </div>
         </div>
     )
 }

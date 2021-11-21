@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     }
     return (
         <div className='z-0'>
-            <div className='page-layout relative pb-20 bg-gray-200 h-auto min-h-screen z-20 mb-40'>
+            <div className='page-layout relative pb-20 bg-white h-auto min-h-screen z-20 mb-40'>
                 <Navbar customClass='z-0' />
                 <SideBar
                     customClass='z-40'
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                         '' +
                         'content-wrapper justify-center flex py-16'
                     }>
-                    <main className='w-screen lg:w-10/12 h-auto top-10 right-0 relative z-10 vflex items-center justify-center pb-96'>
+                    <main className='w-screen lg:w-10/12 h-auto top-10 right-0 relative z-10 vflex items-center justify-center'>
                         {children}
                     </main>
                 </div>
