@@ -9,6 +9,8 @@
     box-shadow: 0px 10px 10px 0px hsla(0, 0%, 0%, 0.52);
 }
 
-.hero-slider {
-    min-height: 450px;
+@media (min-width: 1280px) {
+    .hero-background {
+        height: 500px;
+    }
 }

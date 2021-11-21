@@ -16,9 +16,9 @@ const Navbar = ({ customClass }) => {
             className={
                 customClass +
                 ' ' +
-                'fixed w-screen flex justify-between items-center mx-auto px-8 md:px-14 lg:px-4 bg-gray-400'
+                'fixed w-screen flex justify-between items-center mx-auto px-8 md:px-14 lg:px-4 bg-gray-400 z-40'
             }>
-            <ul className='w-full flex justify-end items-center px-0 h-12 z-0'>
+            <ul className='w-full flex justify-end items-center px-0 h-12 '>
                 <li className='search'>
                     <div
                         className={

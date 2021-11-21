@@ -1,42 +1,81 @@
 import React from 'react'
+import Product from '../components/Product/product'
+
+// images
 import hero_transparent from '../img/hero_transparent.png'
 import logo from '../img/tks_logo_black.png'
+import product1 from '../img/products/product-1.png'
+import product2 from '../img/products/keeb.jpg'
+import product3 from '../img/products/product-3.png'
 
 import './home.css'
 
 const Home = () => {
-    const listOfProducts = [1, 2, 3, 4, 5, 6]
+    const listOfProducts = [
+        {
+            image: product1,
+            alt: 'logo',
+            title: 'Zambumon Deskpad',
+            price: '120.000',
+        },
+        {
+            image: product2,
+            alt: 'logo',
+            title: 'RAMA WORKS® - M65-C',
+            price: '120000',
+        },
+        {
+            image: product3,
+            alt: 'logo',
+            title: 'Cables personalizados',
+            price: '120000',
+        },
+        {
+            image: product2,
+            alt: 'logo',
+            title: 'Cables personalizados',
+            price: '120000',
+        },
+        {
+            image: product3,
+            alt: 'logo',
+            title: 'Cables personalizados',
+            price: '120000',
+        },
+        {
+            image: product1,
+            alt: 'logo',
+            title: 'Cables personalizados',
+            price: '120000',
+        },
+    ]
 
-    const products = listOfProducts.map((e, index) => {
-        return <div className='producto w-80 h-72 bg-red-500 m-10'></div>
-    })
+    const products = listOfProducts.map((e, index) => (
+        <Product {...e} key={index} />
+    ))
 
     return (
         <div className='w-full h-full flex flex-col items-center lg:px-12 px-6 '>
             <div
                 className='
-                    hero-slider
-                    w-full
-                    h-36
-                    lg:h-64 2xl:h-full
-                    mb-20
-                    rounded-3xl
-                    md:bg-center
-                    bg-no-repeat
-                    bg-cover flex
-                    justify-center
-                    items-center
-                    mt-2
-                    bg-gray-400
-                    relative
-                    '>
+					hero-background
+					w-full
+					h-52
+					md:h-72
+					2xl:h-96
+					bg-red-50
+					rounded-3xl
+					relative
+					mb-20
+					2xl:mb-28
+				'>
                 <img
                     src={hero_transparent}
                     alt='keyboard'
-                    className='absolute top-0 right-0 rounded-r-3xl'
+                    className='absolute top-0 right-0 rounded-r-3xl transform scale-100   '
                 />
                 <div className='logo-container absolute left-10 lg:left-40 lg:top-10 top-4 flex items-center flex-col'>
-                    <img src={logo} alt='tks logo' className='2xl:h-36 h-14' />
+                    <img src={logo} alt='tks logo' className='xl:h-36 h-14' />
                     <h2 className='font-medium text-2xl md:text-3xl mt-5 tracking-wide'>
                         The Keeb Store
                     </h2>
@@ -47,7 +86,7 @@ const Home = () => {
                         w-full h-1/6
                         absolute
                         left-0 top-64
-                        hidden 2xl:flex
+                        hidden xl:flex
                         items-center justify-start px-52
                         '>
                     {/* Twitter */}
@@ -118,14 +157,40 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='arrivals w-full h-full border-solid border-black border-4 static md:mt-16 lg:mt-4 2xl:my-44 rounded-3xl px-16 pt-10'>
-                <h1 className='uppercase text-4xl font-bold'>
+            <div
+                className='arrivals
+				w-full
+				min-h-96
+				border-solid
+				border-black
+				border-4
+				static
+				md:mt-16 lg:mt-4 2xl:my-0 rounded-3xl
+				px-4 xl:px-16 pt-10
+				flex items-center justify-start flex-col'>
+                <h1 className='uppercase text-4xl font-bold w-full text-left mb-16'>
                     Recien llegados
                 </h1>
 
-                <div className='products-container h-2/5 flex flex-row flex-wrap items-center justify-center'>
+                <div className='products-container  h-full flex flex-row flex-wrap items-center justify-center mb-16'>
                     {products}
                 </div>
+
+                <button
+                    className='
+						relative
+						bottom-16
+						view-more-btn
+                        w-32
+                        h-12
+						lg:text-lg
+                        border-solid
+                        border-black border-2
+                        rounded-2xl text-black
+                        font-bold tracking-wide
+                        mt-8 capitalize'>
+                    ver más
+                </button>
             </div>
             {/* <div className='somos w-10 h-10 bg-black mb-5'></div>
             <div className='contactanos w-10 h-10 bg-black mb-5'></div> */}
