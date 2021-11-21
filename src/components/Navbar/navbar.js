@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ customClass }) => {
     const [isSearhActive, setIsSearchActive] = useState(false)
 
     const handleSearchClick = (e) => {
@@ -10,34 +9,44 @@ const Navbar = () => {
 
         setIsSearchActive(!isSearhActive)
     }
+
     return (
         <div
             id='navbar'
-            className='w-screen flex justify-between items-center mx-auto px-8 md:px-14 lg:px-4 bg-gray-400'>
-            <div className='logo'>Logo</div>
-            <ul className='w-full flex justify-end items-center px-0 h-12'>
-                <li className='search' onClick={handleSearchClick}>
+            className={
+                customClass +
+                ' ' +
+                'fixed w-screen flex justify-between items-center mx-auto px-8 md:px-14 lg:px-4 bg-gray-400'
+            }>
+            <ul className='w-full flex justify-end items-center px-0 h-12 z-0'>
+                <li className='search'>
                     <div
                         className={
-                            (isSearhActive ? 'active' : '') +
+                            (!isSearhActive ? 'active' : '') +
                             '' +
                             'search-input active mr-2 '
                         }></div>
                     <div className='list-item search-icon'>
-                        <svg
-                            className='item-svg'
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='100%'
-                            height='100%'
-                            viewBox='0 0 33.12 33.12'>
-                            <path
-                                className='shadow'
-                                id='Icon_map-search'
-                                data-name='Icon map-search'
-                                d='M25.675,21.268a13.1,13.1,0,1,0-4.409,4.406l8.887,8.886,4.407-4.409ZM14.508,22.594a8.08,8.08,0,1,1,8.084-8.076,8.093,8.093,0,0,1-8.084,8.076Z'
-                                transform='translate(-1.44 -1.44)'
-                            />
-                        </svg>
+                        <button
+                            onClick={
+                                // eslint-disable-next-line no-restricted-globals
+                                () => handleSearchClick(event)
+                            }>
+                            <svg
+                                className='item-svg'
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='100%'
+                                height='100%'
+                                viewBox='0 0 33.12 33.12'>
+                                <path
+                                    className='shadow'
+                                    id='Icon_map-search'
+                                    data-name='Icon map-search'
+                                    d='M25.675,21.268a13.1,13.1,0,1,0-4.409,4.406l8.887,8.886,4.407-4.409ZM14.508,22.594a8.08,8.08,0,1,1,8.084-8.076,8.093,8.093,0,0,1-8.084,8.076Z'
+                                    transform='translate(-1.44 -1.44)'
+                                />
+                            </svg>
+                        </button>
                     </div>
                 </li>
 

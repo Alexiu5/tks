@@ -1,0 +1,37 @@
+#sidebar {
+    --cubic-bezier: cubic-bezier(0, 0.16, 0.81, 1.06);
+}
+
+.logo {
+    border-radius: 11px;
+}
+
+.sidebar-item.active .bg-active {
+    z-index: 9;
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    background-color: hsla(192, 2%, 41%, 0.781);
+    animation-name: bg-active;
+    animation-duration: 100ms;
+    animation-timing-function: var(--cubic-bezier);
+}
+
+@keyframes bg-active {
+    from {
+        opacity: 0.5;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.sidebar-item.active > button div {
+    border-color: white;
+    color: whitesmoke;
+    fill: white;
+}
