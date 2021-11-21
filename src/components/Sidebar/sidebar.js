@@ -1,23 +1,28 @@
 import React, { useState } from 'react'
 import './sidebar.css'
-const SideBar = () => {
+const SideBar = ({ customClass, handleSideBar, isSidebarOpen }) => {
     const [navItemSelected, setnavItemSelected] = useState(null)
 
     const handleItemSelected = (index) => {
-        console.log(index)
         setnavItemSelected(index)
-        console.log(navItemSelected)
     }
 
     return (
         <div
             id='sidebar'
-            className='fixed hidden h-screen bg-white border-2 border-solid border-black z-10 w-1/6 left-0 top-0 lg:flex flex-col'>
+            className={
+                (isSidebarOpen ? 'active' : 'unactive') +
+                ' ' +
+                customClass +
+                ' ' +
+                'hidden h-screen bg-white border-2 border-solid border-black w-1/6 left-0 top-0 flex-col'
+            }>
             <div className='w-full h-12 flex justify-center pt-1.5 bg-white'>
                 <img
                     className='h-full w-26 min-h-15'
                     src='logo/tks_logo_black.png'
                     alt='tks_logo'
+                    onClick={handleSideBar}
                 />
             </div>
 

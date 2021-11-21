@@ -5,15 +5,21 @@ import logo from '../img/tks_logo_black.png'
 import './home.css'
 
 const Home = () => {
+    const listOfProducts = [1, 2, 3, 4, 5, 6]
+
+    const products = listOfProducts.map((e, index) => {
+        return <div className='producto w-80 h-72 bg-red-500 m-10'></div>
+    })
+
     return (
-        <div className='w-full h-full flex flex-col items-center lg:px-12 px-6'>
+        <div className='w-full h-full flex flex-col items-center lg:px-12 px-6 '>
             <div
                 className='
                     hero-slider
                     w-full
                     h-36
-                    lg:h-64 2xl:h-3/6
-                    mb-5
+                    lg:h-64 2xl:h-full
+                    mb-20
                     rounded-3xl
                     md:bg-center
                     bg-no-repeat
@@ -21,7 +27,7 @@ const Home = () => {
                     justify-center
                     items-center
                     mt-2
-                    bg-white
+                    bg-gray-400
                     relative
                     '>
                 <img
@@ -40,9 +46,10 @@ const Home = () => {
                         social-media-container
                         w-full h-1/6
                         absolute
-                        left-0 bottom-40
+                        left-0 top-64
                         hidden 2xl:flex
-                        items-center justify-start px-52'>
+                        items-center justify-start px-52
+                        '>
                     {/* Twitter */}
                     <div className='social-icon'>
                         <a href='#' className='no-underline'>
@@ -109,27 +116,18 @@ const Home = () => {
                             </svg>
                         </a>
                     </div>
-
-                    {/* Whatsapp */}
-                    {/* <div className='social-icon'>
-                        <a href='#' className='no-underline'>
-                            <svg
-                                className='h-16 w-16 mx-2 social-svg'
-                                xmlns='http://www.w3.org/2000/svg'
-                                viewBox='0 0 512 514.461'>
-                                <path
-                                    id='WhatsApp-Logo'
-                                    d='M373.3,307.064c-6.37-3.188-37.687-18.6-43.526-20.724s-10.084-3.187-14.331,3.188-16.454,20.725-20.17,24.976-7.431,4.785-13.8,1.594-26.9-9.913-51.225-31.616c-18.935-16.89-31.72-37.749-35.435-44.126s-.4-9.824,2.792-13c2.867-2.854,6.371-7.44,9.555-11.16s4.247-6.377,6.37-10.626,1.062-7.971-.532-11.159-14.33-34.542-19.638-47.3c-5.171-12.419-10.422-10.737-14.332-10.934-3.711-.184-7.963-.223-12.208-.223a23.407,23.407,0,0,0-16.987,7.969c-5.838,6.377-22.293,21.789-22.293,53.14s22.824,61.642,26.009,65.894,44.916,68.59,108.816,96.181a365.674,365.674,0,0,0,36.312,13.418c15.259,4.849,29.145,4.165,40.121,2.524,12.238-1.827,37.686-15.408,42.995-30.286S387.1,317.161,385.5,314.5s-5.838-4.251-12.208-7.44M257.071,465.757h-.086A211.569,211.569,0,0,1,149.14,436.222L141.4,431.63,61.208,452.667l21.4-78.19-5.037-8.017A211.368,211.368,0,0,1,45.179,253.7c.047-116.825,95.1-211.87,211.976-211.87a211.92,211.92,0,0,1,211.8,212.041c-.048,116.834-95.1,211.889-211.886,211.889M437.4,73.533A253.277,253.277,0,0,0,257.068-1.23C116.554-1.23,2.193,113.124,2.136,253.681a254.473,254.473,0,0,0,34.03,127.448L0,513.231l135.141-35.45A254.7,254.7,0,0,0,256.967,508.81h.105c140.5,0,254.87-114.366,254.928-254.925A253.4,253.4,0,0,0,437.4,73.533'
-                                    transform='translate(0 1.23)'
-                                    fill-rule='evenodd'
-                                />
-                            </svg>
-                        </a>
-                    </div> */}
                 </div>
             </div>
-            {/* <div className='arrivals w-10 h-10 bg-black mb-5'></div>
-            <div className='somos w-10 h-10 bg-black mb-5'></div>
+            <div className='arrivals w-full h-full border-solid border-black border-4 static md:mt-16 lg:mt-4 2xl:my-44 rounded-3xl px-16 pt-10'>
+                <h1 className='uppercase text-4xl font-bold'>
+                    Recien llegados
+                </h1>
+
+                <div className='products-container h-2/5 flex flex-row flex-wrap items-center justify-center'>
+                    {products}
+                </div>
+            </div>
+            {/* <div className='somos w-10 h-10 bg-black mb-5'></div>
             <div className='contactanos w-10 h-10 bg-black mb-5'></div> */}
         </div>
     )

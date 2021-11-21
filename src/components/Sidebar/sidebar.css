@@ -3,6 +3,36 @@
     --cubic-bezier: ease-in-out;
 }
 
+@keyframes sideBarAnimationClose {
+    from {
+        opacity: 1;
+        left: 0;
+    }
+    to {
+        opacity: 0;
+        left: -50px;
+    }
+}
+
+@keyframes sideBarAnimationEnter {
+    from {
+        opacity: 0;
+        left: -50px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+#sidebar.active {
+    position: fixed;
+    display: flex;
+    animation-name: sideBarAnimationEnter;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
 .logo {
     border-radius: 11px;
 }

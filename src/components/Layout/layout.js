@@ -1,18 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../Footer/footer'
 import Navbar from '../Navbar/navbar'
 import SideBar from '../Sidebar/sidebar'
+
+import './layout.css'
 const Layout = ({ children }) => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+    const handleSideBar = () => {
+        setIsSidebarOpen(!isSidebarOpen)
+    }
     return (
-        <div className='page-layout relative pb-20 bg-gray-200'>
-            <Navbar customClass='z-10' />
-            <div className='content-wrapper lg:py-12 py-6 md:px-5 lg:px-20 flex lg:justify-end'>
-                <SideBar />
-                <main className='w-screen lg:w-10/12  min-h-screen top-10 right-0 relative z-0 flex items-center justify-center'>
-                    {children}
-                </main>
+        <div className='z-0'>
+            <div className='page-layout relative pb-20 bg-gray-200 h-auto min-h-screen z-20 mb-40'>
+                <Navbar customClass='z-0' />
+                <SideBar
+                    customClass='z-40'
+                    handleSideBar={handleSideBar}
+                    isSidebarOpen={isSidebarOpen}
+                />
+                <div
+                    className={
+                        (!isSidebarOpen
+                            ? 'justify-center'
+                            : 'lg:py-12 md:px-5 lg:px-20 lg:justify-end  min-h-screen') +
+                        '' +
+                        'content-wrapper justify-center flex py-16'
+                    }>
+                    <main className='w-screen lg:w-10/12 h-auto top-10 right-0 relative z-10 vflex items-center justify-center pb-96'>
+                        {children}
+                    </main>
+                </div>
             </div>
-            <Footer customClass='w-screen right-0 bottom-0 z-40' />
+            <Footer customClass='w-screen right-0 bottom-0 z-0' />
         </div>
     )
 }

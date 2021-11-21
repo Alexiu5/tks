@@ -6,7 +6,7 @@ const Footer = ({ customClass }) => {
             className={
                 customClass +
                 ' ' +
-                'absolute w-screen h-16 bg-black flex justify-between items-center lg:px-20 px-8 font-medium'
+                'fixed w-screen h-16 bg-black flex justify-between items-center lg:px-20 px-8 font-medium'
             }>
             <span className='copy text-white flex flex-row items-center'>
                 Copyright{' '}
