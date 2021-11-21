@@ -1,10 +1,11 @@
 import './App.css'
 import './styles/output.css'
 import Layout from './components/Layout/layout'
+import Home from './views/home'
 function App() {
     return (
         <Layout>
-            <p>Im supposed to be a children</p>
+            <Home />
         </Layout>
     )
 }

@@ -6,9 +6,9 @@ const Layout = ({ children }) => {
     return (
         <div className='page-layout relative pb-20'>
             <Navbar customClass='z-10' />
-            <div className='content-wrapper lg:py-12 py-6 px-5 lg:px-20 flex justify-end'>
+            <div className='content-wrapper lg:py-12 py-6 md:px-5 lg:px-20 flex lg:justify-end'>
                 <SideBar />
-                <main className='w-screen lg:w-10/12 bg-black min-h-screen top-10 right-0 relative z-0'>
+                <main className='w-screen lg:w-10/12 bg-red-500 min-h-screen top-10 right-0 relative z-0 flex items-center justify-center'>
                     {children}
                 </main>
             </div>
