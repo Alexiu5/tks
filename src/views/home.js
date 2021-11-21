@@ -35,7 +35,14 @@ const Home = () => {
                         The Keeb Store
                     </h2>
                 </div>
-                <div className='social-media-container w-3/6 h-1/6 absolute left-0 bottom-40 hidden 2xl:flex items-center justify-center'>
+                <div
+                    className='
+                        social-media-container
+                        w-full h-1/6
+                        absolute
+                        left-0 bottom-40
+                        hidden 2xl:flex
+                        items-center justify-start px-52'>
                     {/* Twitter */}
                     <div className='social-icon'>
                         <a href='#' className='no-underline'>
