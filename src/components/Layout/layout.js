@@ -2,13 +2,10 @@ import React, { useState } from 'react'
 import Footer from '../Footer/footer'
 import Navbar from '../Navbar/navbar'
 import SideBar from '../Sidebar/sidebar'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import Home from '../../views/home'
 
 import './layout.css'
 const Layout = ({ children }) => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const handleSideBar = () => {
         setIsSidebarOpen(!isSidebarOpen)
     }
