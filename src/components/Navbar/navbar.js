@@ -26,17 +26,15 @@ const Navbar = ({ customClass }) => {
                             '' +
                             'search-input active mr-2 '
                         }></div>
-                    <div className='list-item search-icon'>
+                    <div className='list-item'>
                         <button
                             onClick={
                                 // eslint-disable-next-line no-restricted-globals
                                 () => handleSearchClick(event)
                             }>
                             <svg
-                                className='item-svg'
+                                className='w-9 h-7 relative left-1'
                                 xmlns='http://www.w3.org/2000/svg'
-                                width='100%'
-                                height='100%'
                                 viewBox='0 0 33.12 33.12'>
                                 <path
                                     className='shadow'
@@ -54,8 +52,6 @@ const Navbar = ({ customClass }) => {
                     <svg
                         className='item-svg'
                         xmlns='http://www.w3.org/2000/svg'
-                        width='30'
-                        height='26.667'
                         viewBox='0 0 30 26.667'>
                         <path
                             className='shadow'
@@ -70,8 +66,6 @@ const Navbar = ({ customClass }) => {
                     <svg
                         className='item-svg'
                         xmlns='http://www.w3.org/2000/svg'
-                        width='24'
-                        height='29.25'
                         viewBox='0 0 24 29.25'>
                         <path
                             className='shadow'
@@ -87,8 +81,6 @@ const Navbar = ({ customClass }) => {
                     <svg
                         className='item-svg'
                         xmlns='http://www.w3.org/2000/svg'
-                        width='31'
-                        height='27.9'
                         viewBox='0 0 31 27.9'>
                         <path
                             className='shadow'

@@ -1,17 +1,17 @@
 import React from 'react'
-import Product from '../components/Product/product'
-import ContactForm from '../components/ContactForm/contactForm'
+import ContactForm from '../../components/ContactForm/contactForm'
 
 // images
-import hero_transparent from '../img/hero_transparent.png'
-import logo from '../img/tks_logo_black.png'
-import product1 from '../img/products/product-1.png'
-import product2 from '../img/products/keeb.jpg'
-import product3 from '../img/products/product-3.png'
-import keyboardMilk from '../img/keyboard-milk.jpg'
-import kara from '../img/kara.jpg'
+import hero_transparent from '../../img/hero_transparent.png'
+import logo from '../../img/tks_logo_black.png'
+import product1 from '../../img/products/product-1.png'
+import product2 from '../../img/products/keeb.jpg'
+import product3 from '../../img/products/product-3.png'
+import keyboardMilk from '../../img/keyboard-milk.jpg'
+import kara from '../../img/kara.jpg'
 
 import './home.css'
+import ProductList from '../../components/Product/productList'
 
 const Home = () => {
     const listOfProducts = [
@@ -53,27 +53,22 @@ const Home = () => {
         },
     ]
 
-    const products = listOfProducts.map((e, index) => (
-        <Product {...e} key={index} />
-    ))
-
     return (
         <>
             <div className='w-full h-full flex flex-col items-center lg:px-12 px-6 '>
                 {/* Hero banner */}
                 <div
                     className='
-					hero-background
-					w-full
-					h-52
-					md:h-72
-					2xl:h-96
-					bg-gray-400
-					rounded-3xl
-					relative
-					mb-20
-					2xl:mb-28
-				'>
+                        w-full
+                        h-52
+                        md:h-72
+                        bg-gray-400
+                        rounded-3xl
+                        relative
+                        mb-20
+                        2xl:mb-52
+                        hero-background 
+                    '>
                     <img
                         src={hero_transparent}
                         alt='keyboard'
@@ -166,6 +161,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
                 {/* New Arrivals */}
                 <div
                     className='arrivals
@@ -182,9 +178,7 @@ const Home = () => {
                         Recien llegados
                     </h1>
 
-                    <div className='products-container  h-full flex flex-row flex-wrap items-center justify-center mb-16'>
-                        {products}
-                    </div>
+                    <ProductList listOfProducts={listOfProducts} />
 
                     <button
                         className='
@@ -202,29 +196,29 @@ const Home = () => {
                         ver más
                     </button>
                 </div>
-                {/* Who are we? */}
 
+                {/* Who are we? */}
                 <div
                     className='container w-full
-					min-h-96
-					overflow-hidden
-					relative rounded-3xl
-					z-0'>
+                        min-h-screen
+                        overflow-hidden
+                        relative rounded-3xl
+                        z-0'>
                     <div className='shadow absolute w-full h-full bg-gray-800 left-0 top-16 z-0 opacity-10 rounded-3xl'></div>
                     <div
                         className='somos
-					my-10
-					text-white
-					py-4
-                    px-4
-                    mt-16
-					xl:mt-32
-					flex
-					flex-col
-					z-40
-					transform
-                    scale-95
-                    xl:scale-90'>
+                            my-10
+                            text-white
+                            py-4
+                            px-4
+                            mt-16
+                            xl:mt-32
+                            flex
+                            flex-col
+                            z-40
+                            transform
+                            scale-95
+                            xl:scale-90'>
                         <h2 className='title w-full h-16 font-bold text-3xl lg:text-5xl text-black uppercase text-center md:mb-16'>
                             ¿Quienes somos?
                         </h2>
