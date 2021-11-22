@@ -8,7 +8,7 @@ import product1 from '../../img/products/product-1.png'
 import product2 from '../../img/products/keeb.jpg'
 import product3 from '../../img/products/product-3.png'
 import keyboardMilk from '../../img/keyboard-milk.jpg'
-import kara from '../../img/kara.jpg'
+// import kara from '../../img/kara.jpg'
 
 import './home.css'
 import ProductList from '../../components/Product/productList'
@@ -95,7 +95,9 @@ const Home = () => {
                         '>
                         {/* Twitter */}
                         <div className='social-icon'>
-                            <a href='#' className='no-underline'>
+                            <a
+                                href='http://localhost:3000/'
+                                className='no-underline'>
                                 <svg
                                     className='h-16 w-16 mx-2 social-svg '
                                     xmlns='http://www.w3.org/2000/svg'
@@ -111,7 +113,9 @@ const Home = () => {
 
                         {/* Facebook */}
                         <div className='social-icon'>
-                            <a href='#' className='no-underline'>
+                            <a
+                                href='http://localhost:3000/'
+                                className='no-underline'>
                                 <svg
                                     className='h-16 w-16 mx-2 social-svg'
                                     xmlns='http://www.w3.org/2000/svg'
@@ -127,7 +131,9 @@ const Home = () => {
 
                         {/* Instagram */}
                         <div className='social-icon'>
-                            <a href='#' className='no-underline'>
+                            <a
+                                href='http://localhost:3000/'
+                                className='no-underline'>
                                 <svg
                                     className='h-16 w-16 mx-2 social-svg'
                                     xmlns='http://www.w3.org/2000/svg'
