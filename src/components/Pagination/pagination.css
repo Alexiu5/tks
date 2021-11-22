@@ -1,0 +1,18 @@
+.pag-item {
+    transiton: all 100ms ease-in-out;
+}
+
+.pag-item.active {
+    position: relative;
+    font-weight: bold;
+}
+
+.pag-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 1rem;
+    border-radius: 10px;
+    border: 3px solid black;
+}

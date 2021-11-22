@@ -1,0 +1,105 @@
+#sidebar {
+    /* --cubic-bezier: cubic-bezier(0, 0.16, 0.81, 1.06); */
+    --cubic-bezier: ease-in-out;
+}
+
+@keyframes sideBarAnimationClose {
+    from {
+        opacity: 1;
+        left: 0;
+    }
+    to {
+        opacity: 0;
+        left: -50px;
+    }
+}
+
+@keyframes sideBarAnimationEnter {
+    from {
+        opacity: 0;
+        left: -50px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+#sidebar.active {
+    position: fixed;
+    display: flex;
+    animation-name: sideBarAnimationEnter;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+.logo {
+    border-radius: 11px;
+}
+
+.sidebar-item.active .bg-active {
+    z-index: 9;
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    background-color: hsla(192, 2%, 41%, 0.781);
+    animation-name: bg-active;
+    animation-duration: 100ms;
+    animation-timing-function: var(--cubic-bezier);
+}
+
+@keyframes bg-active {
+    0% {
+        opacity: 0;
+        background-color: hsla(180, 1%, 74%, 0.527);
+        transform: scale(1.1);
+    }
+
+    50% {
+        opacity: 1;
+        background-color: hsla(192, 2%, 41%, 0.781);
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes sidebar-item-animation {
+    from {
+        color: black;
+        fill: black;
+    }
+    to {
+        fill: white;
+        color: white;
+    }
+}
+
+@keyframes sidebar-icon-animation {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.sidebar-item.active .sidebar-item-svg {
+    animation-name: sidebar-icon-animation;
+    animation-duration: 100ms;
+    animation-timing-function: var(--cubic-bezier);
+}
+
+.sidebar-item.active > button div {
+    animation-name: sidebar-item-animation;
+    animation-duration: 100ms;
+    animation-timing-function: var(--cubic-bezier);
+
+    border-color: white;
+    color: whitesmoke;
+    fill: white;
+}

@@ -1,0 +1,16 @@
+.social-icon .social-svg {
+    border-radius: 50%;
+    transition: all 100ms ease;
+    border: 4px solid hsla(0, 0%, 97%, 0.247);
+}
+
+.social-icon:hover .social-svg {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 10px 0px hsla(0, 0%, 0%, 0.52);
+}
+
+@media (min-width: 1536px) {
+    .hero-background {
+        min-height: 500px;
+    }
+}
